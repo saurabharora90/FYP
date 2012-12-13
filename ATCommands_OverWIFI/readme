@@ -1,0 +1,5 @@
+This project contains the code for opening a socket and connecting to the parrot AR DRONE and then send commands to it over WIFI.
+
+You need to connect the Drone wifi's before using this program to send commands to it. Only a few AT Commands have been programmed as this is only for testing purposes.
+
+The drone's IP is "192.168.1.1" and it listens on UDP_PORT	5556
