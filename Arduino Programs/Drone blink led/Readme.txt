@@ -1,0 +1,1 @@
+This arduino sketch contains the basic structure of how to send the AT commands to the Parrot AR Drone using the serial port and atcomproxy_arm
