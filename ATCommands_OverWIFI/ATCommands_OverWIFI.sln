@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ATCommands_OverWIFI", "ATCommands_OverWIFI\ATCommands_OverWIFI.vcxproj", "{33B82627-705D-4F9F-BE7E-573FE5F5D20C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{33B82627-705D-4F9F-BE7E-573FE5F5D20C}.Debug|Win32.ActiveCfg = Debug|Win32
+		{33B82627-705D-4F9F-BE7E-573FE5F5D20C}.Debug|Win32.Build.0 = Debug|Win32
+		{33B82627-705D-4F9F-BE7E-573FE5F5D20C}.Release|Win32.ActiveCfg = Release|Win32
+		{33B82627-705D-4F9F-BE7E-573FE5F5D20C}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
