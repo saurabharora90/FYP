@@ -1,0 +1,3 @@
+This folder contains all the guides and files required to downgrade the Parrot A.R. Drone to firmware 1.3.3 and to enable its serial port to receive commands.
+
+You need to downgrade the firmware and the hack for serial port only work with firmware 1.3.3
