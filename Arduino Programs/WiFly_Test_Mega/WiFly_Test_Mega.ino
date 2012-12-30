@@ -17,7 +17,7 @@
 // Arduino       WiFly
 //  2 - receive  TX   (Send from Wifly, Receive to Arduino)
 //  3 - send     RX   (Send from Arduino, Receive to WiFly) 
-WiFlySerial WiFly(11,10); //In mega board, we send from pin 10 and receive on pin 11
+WiFlySerial WiFly(11,10); //In mega board, we send from pin 10 and receive on pin 11  11 - RX, 10-TX
 
 #define REQUEST_BUFFER_SIZE 120
 #define HEADER_BUFFER_SIZE 150 
