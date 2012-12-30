@@ -1,4 +1,3 @@
-
 #include "user_config.h"
 
 int cdata;
@@ -10,7 +9,7 @@ int seq  = 1;
 char data[100];
 int ledPin = 13;                  // LED test pin
  int rxPin = 19;                    // RX PIN 
- int txPin = 18;     
+ int txPin = 18;                    // TX PIN     
 void setup()
 {
   //delay(10000);
