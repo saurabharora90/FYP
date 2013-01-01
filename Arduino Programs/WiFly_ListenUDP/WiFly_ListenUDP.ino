@@ -17,10 +17,15 @@ void setup()
   Serial.begin(9600);
   wifiSerial.begin(9600);
   wifly.begin(&wifiSerial);
-  
   //Set port on which to listen for data
   wifly.setPort(LOCAL_PORT);
   wifly.setIpProtocol(WIFLY_PROTOCOL_UDP);
+  
+  //Create Ad hoc does the following:
+  //setDHCP(WIFLY_DHCP_MODE_OFF);
+  //setIP(F("169.254.1.1"));
+  //setNetmask(F("255.255.0.0"));
+
   wifly.createAdhocNetwork(ADHOC_NAME, ADHOC_CHANNEL);
   
   Serial.println(F("Ad Hoc set" ) );
