@@ -5,8 +5,11 @@
 
 using namespace std;
 
-#define DRONE_IP	"192.168.1.1"
-#define UDP_PORT	5556
+//#define DRONE_IP	"192.168.1.1"
+//#define UDP_PORT	5556
+
+#define DRONE_IP	"169.254.100.1"
+#define UDP_PORT	2000
 
 SOCKET s;
 
