@@ -5,8 +5,8 @@
 #include "GPSCoordinate.h"
 #include <vector>
 
-#define Col  20  //Predefining that the agent is searching a 20x20 grid.
-#define Row  20
+#include "system_config.h"
+
 using namespace std;
 
 class Grid
@@ -40,6 +40,31 @@ public:
 			//centerGPSCoords.push_back(tempVec);
 		}
 	}
+
+        void Begin(GPSCoordinate TL, GPSCoordinate TR, GPSCoordinate BL, GPSCoordinate BR)
+        {
+	  topLeft = TL;
+          topRight = TR;
+          bottomLeft = BL;
+          bottomRight = BR;
+          nCol = Col;
+          nRow = Row;
+		for(int i=0;i<nRow;i++)
+		{
+			//vector<GPSCoordinate> tempVec;
+                        GPSCoordinate tempVec[Col];
+			GPSCoordinate projectionOnLeft = topLeft.coordAtRatioFrom(bottomLeft,(i+0.5)/nRow);
+			GPSCoordinate projectionOnRight = topRight.coordAtRatioFrom(bottomRight,(i+0.5)/nRow);
+			for(int j=0;j<nCol;j++)
+                        {
+				//tempVec.push_back(projectionOnLeft.coordAtRatioFrom(projectionOnRight,(j+0.5)/nCol));
+                                tempVec[j]=projectionOnLeft.coordAtRatioFrom(projectionOnRight,(j+0.5)/nCol);
+                                centerGPSCoords[i][j] = tempVec[j];
+                        }
+			//centerGPSCoords.push_back(tempVec);
+		}
+	}
+        
 	Grid():	topLeft(0,0),topRight(0,0),bottomLeft(0,0),bottomRight(0,0),nCol(0),nRow(0){}
 
 	MapCoordinate convertGPStoXY(double latitude,double longitude)

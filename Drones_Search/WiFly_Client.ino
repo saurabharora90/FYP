@@ -10,10 +10,7 @@ the server storing them to know which one to send the information too.*/
 #include <WiFlyHQ.h>
 #include <SoftwareSerial.h>
 
-#define REMOTEHOST_PORT       2000     //Will send data to this port (Note: this is the local port of the server.
-#define LOCAL_PORT            3000     //Will listen at this port. (Note: the server sends data to this port.
-#define ADHOC_NAME            "Drone_Server"
-#define ADHOC_CHANNEL         10
+#include "system_config.h"
 
 WiFly client;
 
@@ -41,7 +38,7 @@ void configureClient()
   client.setIP(F("169.254.100.1")); //Set a static IP.
   client.setNetmask(F("255.255.0.0"));
   client.setDHCP(WIFLY_DHCP_MODE_OFF);
-  client.setPort(LOCAL_PORT);  //Configure it to also be able to listen to UDP dat
+  client.setPort(Client_PORT);  //Configure it to also be able to listen to UDP dat
   client.setIpProtocol(WIFLY_PROTOCOL_UDP);
   client.save();
 
@@ -54,7 +51,7 @@ void configureClient()
   Serial.println(client.getIP(buf, sizeof(buf)));
 
   Serial.println("Sending data");
-  client.sendto("Connecting...", "169.254.1.1", REMOTEHOST_PORT); //The IP address of the WiFly board which created the ad-hoc connection.
+  client.sendto("Connecting...", "169.254.1.1", Server_PORT); //The IP address of the WiFly board which created the ad-hoc connection.
   //wifly.sendto("Hello, world", "169.254.182.24", REMOTEHOST_PORT); Test on laptop
   Serial.println("Data sent");
 }

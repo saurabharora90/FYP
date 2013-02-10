@@ -2,10 +2,7 @@
 #include <Streaming.h>
 #include <WiFlyHQ.h>
 #include <SoftwareSerial.h>
-
-#define Drone_Type  "Server"
-
-//General variable declarations
+#include "system_config.h"
 
 //WiFly GX Breakout Board
 WiFly wifly;

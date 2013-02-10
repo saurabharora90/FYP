@@ -3,10 +3,7 @@
 #include <WiFlyHQ.h>
 #include <SoftwareSerial.h>
 
-#define REMOTEHOST_PORT       3000     //Will send data to this port
-#define LOCAL_PORT            2000     //Listens on port 2000
-#define ADHOC_NAME            "Drone_Server"
-#define ADHOC_CHANNEL         10
+#include "system_config.h"
 
 WiFly server;
 
@@ -18,7 +15,7 @@ void configureServer()
   wifiSerial.begin(9600);
   server.begin(&wifiSerial);
   //Set port on which to listen for data
-  server.setPort(LOCAL_PORT);
+  server.setPort(Server_PORT);
   server.setIpProtocol(WIFLY_PROTOCOL_UDP);
   
   //Create Ad hoc does the following:
