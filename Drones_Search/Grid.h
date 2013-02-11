@@ -22,7 +22,7 @@ private:
 public:
 	int nCol;
 	int nRow;
-	Grid(GPSCoordinate TL, GPSCoordinate TR, GPSCoordinate BL, GPSCoordinate BR):
+	/*Grid(GPSCoordinate TL, GPSCoordinate TR, GPSCoordinate BL, GPSCoordinate BR):
 	  topLeft(TL),topRight(TR),bottomLeft(BL),bottomRight(BR),nCol(Col),nRow(Row)
 	{
 		for(int i=0;i<nRow;i++)
@@ -39,7 +39,7 @@ public:
                         }
 			//centerGPSCoords.push_back(tempVec);
 		}
-	}
+	}*/
 
         void Begin(GPSCoordinate TL, GPSCoordinate TR, GPSCoordinate BL, GPSCoordinate BR)
         {

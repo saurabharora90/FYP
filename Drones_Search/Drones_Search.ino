@@ -14,7 +14,10 @@ void setup()
   
   //set up compass
   
+  //set up GPS
+  
   //set up the drone
+  init_system();
 }
 
 void loop()
