@@ -11,6 +11,12 @@
 #include "GPSCoordinate.h"
 
 /**
+* Terrain Information
+*/
+
+double terrainInfo[20][20];  //this is required to calculate the shortest possible path taken by the target to get to destination and then searching along that path
+
+/**
 * Grid assmumptions
 */
 
@@ -33,10 +39,25 @@
 * WiFLY RN-131C constants
 */
 
+WiFly wifly;
 #define Client_PORT           3000     //Server will send data to this port and client will listen at this port
 #define Server_PORT           2000     //Server will listens on port 2000 and client will send data to this port.
 #define ADHOC_NAME            "Drone_Server"
 #define ADHOC_CHANNEL         10
+
+//Id for commands.
+#define StartBeliefMapSend    "Starting sending of belief map"
+#define EndBeliefMapSend      "Belief Map send complete"
+
+
+/**
+* Belief Information Exchange
+*/
+
+#define  Strip_Thickness      8        //We divide the grid into horizontal strips each 8 cells thick, i.e. the number of rows in Strip
+#define  ColumnsInStrip       Col       //Currently we have a 20*20 Grid
+#define  Strip_StartCellId(stripID)    stripId*Strip_Thickness*ColumnsInStrip
+#define  Strip_EndCellId(stripId)      ((stripId+1)*Strip_Thickness*ColumnsInStrip)-1
 
 /**
 * Drone Specific Constants

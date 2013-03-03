@@ -4,9 +4,6 @@
 #include <SoftwareSerial.h>
 #include "system_config.h"
 
-//WiFly GX Breakout Board
-WiFly wifly;
-
 void setup()
 {
   //Set up the ad-hoc connections for UDP Communication.

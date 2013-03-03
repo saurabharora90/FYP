@@ -24,12 +24,13 @@ void configureClient()
   wifiSerial.begin(9600);
   client.begin(&wifiSerial);
   
-  Serial.print("Device Id: ");
+  Serial.print(F("Device Id: "));
   Serial.println(client.getDeviceID(buf, sizeof(buf)));
 	
 /* Setup the WiFly to connect to the adHoc wifi network */
-	
-  Serial.println("Leaving network");
+
+  //Hint: Static strings can quickly gobble up SRAM. A simple technique to avoid that is to use the F( ) macro
+  Serial.println(F("Leaving network"));
   client.leave();
   
   //Connect to Adhoc
@@ -42,18 +43,18 @@ void configureClient()
   client.setIpProtocol(WIFLY_PROTOCOL_UDP);
   client.save();
 
-  Serial.println("Parameters set");
-  Serial.println("Joining network....");
+  Serial.println(F("Parameters set"));
+  Serial.println(F("Joining network...."));
   
   client.join();
   Serial.println(F("Ad Hoc joined" ) );
   Serial.println(client.getSSID(buf, sizeof(buf)));
   Serial.println(client.getIP(buf, sizeof(buf)));
 
-  Serial.println("Sending data");
+  Serial.println(F("Sending data"));
   client.sendto("Connecting...", "169.254.1.1", Server_PORT); //The IP address of the WiFly board which created the ad-hoc connection.
   //wifly.sendto("Hello, world", "169.254.182.24", REMOTEHOST_PORT); Test on laptop
-  Serial.println("Data sent");
+  Serial.println(F("Data sent"));
 }
 
 WiFly getClientPointer()

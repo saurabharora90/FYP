@@ -9,12 +9,12 @@
 
 //Search Algorithm variables
 GPSCoordinate curGPS; //Current GPS position of the drone.
-GPSCoordinate targetGPS; //the next target to which it has to fly to
+MapCoordinate curMap; //Current position of the drone on the map. Obtained by converting the GPS position to its MapCoordinate equivalent. grid.convertGPStoXY(curGPS.lat,curGPS.lon);
 
 GPSCoordinate givenGPS;		//given last-known target position
 GPSCoordinate destGPS;		//target destination
 
-MapCoordinate curMap; //Current position of the drone on the map. Obtained by converting the GPS position to its MapCoordinate equivalent. grid.convertGPStoXY(curGPS.lat,curGPS.lon);
+GPSCoordinate targetGPS; //the next target to which it has to fly to
 MapCoordinate targetMap;
 
 Grid grid;
@@ -164,6 +164,7 @@ void update()
 
 void updateTimeSinceLastVisit()
 {
+  getCurrentGPS();
   //assuming we have the current GPS retrieved 
   double lat = curGPS.lat;
   double lon = curGPS.lon;
